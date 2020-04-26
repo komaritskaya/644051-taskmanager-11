@@ -2,7 +2,7 @@ import {
   getRandomBool,
   getRandomItemFromArray,
   getRandomDate,
-} from '../utils';
+} from '../utils/common';
 import {
   COLORS,
   DAYS,

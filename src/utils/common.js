@@ -1,8 +1,3 @@
-export const RenderPosition = {
-  AFTERBEGIN: `afterbegin`,
-  BEFOREEND: `beforeend`
-};
-
 export const getRandomInt = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -10,7 +5,7 @@ export const getRandomInt = (min, max) => {
 };
 
 export const getRandomBool = () => {
-  return Math.random() < 0.5
+  return Math.random() < 0.5;
 };
 
 export const getRandomItemFromArray = (arr) => {
@@ -34,22 +29,4 @@ export const formatTime = (date) => {
   const minutes = castTimeFormat(date.getMinutes());
 
   return `${hours}:${minutes}`;
-};
-
-export const createElement = (template) => {
-  const newElement = document.createElement(`div`);
-  newElement.innerHTML = template;
-
-  return newElement.firstChild;
-};
-
-export const render = (container, element, place) => {
-  switch (place) {
-    case RenderPosition.AFTERBEGIN:
-      container.prepend(element);
-      break;
-    case RenderPosition.BEFOREEND:
-      container.append(element);
-      break;
-  }
 };
