@@ -97,7 +97,7 @@ export default class BoardController {
           remove(this._loadMoreButtonComponent);
         }
       });
-    }
+    };
 
     const container = this._container.getElement();
     const isAllTasksArchived = tasks.every((task) => task.isArchive);
