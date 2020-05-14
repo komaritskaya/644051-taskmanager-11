@@ -1,7 +1,6 @@
-
 import FilterComponent from '../components/filter';
 import {FilterType} from '../const';
-import {render, replace, RenderPosition} from '../utils/render';
+import {render, replace} from '../utils/render';
 import {getTasksByFilter} from '../utils/filter';
 
 export default class FilterController {
@@ -36,7 +35,7 @@ export default class FilterController {
     if (oldComponent) {
       replace(this._filterComponent, oldComponent);
     } else {
-      render(container, this._filterComponent, RenderPosition.BEFOREEND);
+      render(container, this._filterComponent);
     }
   }
 

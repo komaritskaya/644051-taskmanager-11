@@ -1,3 +1,5 @@
+import {nanoid} from 'nanoid';
+
 import {
   getRandomBool,
   getRandomItemFromArray,
@@ -25,6 +27,7 @@ const generateRepeatingDays = () => (
 export const generateTask = () => {
   const dueDate = getRandomBool() ? null : getRandomDate();
   return {
+    id: nanoid(),
     description: getRandomItemFromArray(descriptions),
     dueDate,
     repeatingDays: dueDate ? generateDefaultRepeatingDays() : generateRepeatingDays(),
