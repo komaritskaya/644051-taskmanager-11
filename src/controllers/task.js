@@ -1,6 +1,6 @@
 import TaskComponent from "../components/task.js";
 import TaskEditComponent from "../components/task-edit.js";
-import {render, replace, remove} from "../utils/render.js";
+import {render, replace, remove, RenderPosition} from "../utils/render.js";
 import {COLOR} from "../const.js";
 
 export const Mode = {
@@ -88,7 +88,7 @@ export default class TaskController {
           remove(oldTaskEditComponent);
         }
         document.addEventListener(`keydown`, this._onEscKeyDown);
-        render(this._container, this._taskEditComponent);
+        render(this._container, this._taskEditComponent, RenderPosition.AFTERBEGIN);
         break;
     }
   }
