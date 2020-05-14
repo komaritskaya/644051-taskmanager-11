@@ -1,5 +1,5 @@
-import {getTasksByFilter} from "../utils/filter.js";
-import {FilterType} from "../const.js";
+import {getTasksByFilter} from '../utils/filter';
+import {FilterType} from '../const';
 
 export default class Tasks {
   constructor() {
@@ -42,11 +42,6 @@ export default class Tasks {
     return true;
   }
 
-  addTask(task) {
-    this._tasks = [].concat(task, this._tasks);
-    this._callHandlers(this._dataChangeHandlers);
-  }
-
   updateTask(id, task) {
     const index = this._tasks.findIndex((it) => it.id === id);
 
@@ -59,6 +54,11 @@ export default class Tasks {
     this._callHandlers(this._dataChangeHandlers);
 
     return true;
+  }
+
+  addTask(task) {
+    this._tasks = [].concat(task, this._tasks);
+    this._callHandlers(this._dataChangeHandlers);
   }
 
   setFilterChangeHandler(handler) {
